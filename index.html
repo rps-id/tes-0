@@ -101,11 +101,20 @@
                 messageDiv.textContent = 'Kamu berhasil';
                 messageDiv.className = 'message success';
                 messageDiv.style.display = 'block';
+                setTimeout(clearInputAll, 5500);
             } else {
                 messageDiv.textContent = 'Coba lagi';
                 messageDiv.className = 'message error';
-                messageDiv.style.display = 'block';
+                messageDiv.style.display = 'block' ;
+                setTimeout(clearInputAll, 3000);
+
             }
+
+        }
+        function clearInputAll(){
+            clearInput();
+            var messageDiv = document.getElementById('message');
+            messageDiv.style.display = 'none';
         }
     </script>
 </body>
