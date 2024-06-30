@@ -23,9 +23,11 @@
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
         .input-group .form-control {
-            height: 50px;
+            width: 70px;
+            height: 70px;
             text-align: center;
             font-size: 24px;
+            line-height: 70px;
         }
         .btn-calc {
             width: 70px;
@@ -73,7 +75,7 @@
             <div class="btn-group mb-2">
                 <button class="btn btn-secondary btn-calc" onclick="clearInput()">C</button>
                 <button class="btn btn-secondary btn-calc" onclick="appendNumber(0)">0</button>
-                <button class="btn btn-primary btn-calc" onclick="validateInput()">enter</button>
+                <button class="btn btn-primary btn-calc" onclick="validateInput()">Enter</button>
             </div>
         </div>
         <div id="message" class="message"></div>
@@ -93,7 +95,9 @@
         function validateInput() {
             var input = document.getElementById('userInput').value;
             var messageDiv = document.getElementById('message');
-            if (input == 651) {
+            var validNumbers = [651, 702, 583]; // Daftar angka valid
+
+            if (validNumbers.includes(parseInt(input))) {
                 messageDiv.textContent = 'Kamu berhasil';
                 messageDiv.className = 'message success';
                 messageDiv.style.display = 'block';
